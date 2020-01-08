@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: "Kublai Kanban",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     unset: "destroy"
