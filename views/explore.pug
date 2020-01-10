@@ -1,0 +1,13 @@
+extend layout
+
+block content
+    br
+    h3 Welcome to the Legends Info
+    div#legends
+        ul
+            each legend in legends
+                li
+                    -var legendUrl = '/explore/' + legend.name
+                    a(href=legendUrl)= legend.name
+                    
+                    

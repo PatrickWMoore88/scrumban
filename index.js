@@ -7,8 +7,8 @@ const bodyParser = require("body-parser");
 const pbkdf2 = require("pbkdf2");
 const accountRouter = require("./routes/account");
 const boardRouter = require("./routes/boards");
-const listRouter = require("./routes/lists");
-const cardRouter = require("./routes/cards");
+// const listRouter = require("./routes/lists");
+const cardRouter = require("./routes/card");
 require("dotenv").config();
 
 var salt = process.env.SALT_KEY;
@@ -28,9 +28,9 @@ app.use(
 );
 app.use(express.static(__dirname + "/public"));
 app.use("/account", accountRouter);
-app.use("/boards", boardRouter);
-app.use("/lists", listRouter);
-app.use("/cards", cardRouter);
+// app.use("/boards", boardRouter);
+// app.use("/lists", listRouter);
+// app.use("/card", cardRouter);
 
 app.use(function(req, res, next) {
   console.log(req.method, req.path);
@@ -95,11 +95,11 @@ passport.use(
 );
 
 // Passport Github Authentication
-const github = require("passport-github").Strategy;
-github.use(
+const GitHubStrategy = require("passport-github2").Strategy;
+passport.use(
   new GitHubStrategy(
     {
-      clientId: process.env.GITHUB_CLIENT_ID,
+      clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       callbackURL: "https://localhost:3000/auth/github/callback"
     },
@@ -126,7 +126,10 @@ app.get(
 );
 
 app.get("/", (req, res) => {
-  res.render("/home");
+  res.render("login");
+});
+app.get("/registration", (req, res) => {
+  res.render("registration");
 });
 
 // Dynamic Port Setting

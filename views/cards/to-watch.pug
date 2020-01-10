@@ -1,0 +1,10 @@
+extend account
+
+append base
+    h2 Welcome to the 'My Pants Are Still Dry List', and ya'r still a dingus!
+    
+    if toWatchMovies.length
+        each title in toWatchMovieTitles
+            li= title
+    else
+        p No movies added and ya'r still an uncultured swine.

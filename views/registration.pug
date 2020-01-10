@@ -1,0 +1,23 @@
+extend layout
+
+block content
+    .container 
+        .row
+            .col
+                h1 Scrumban - Registration 
+                form(method="POST" action="/register")
+                    .form-group
+                        label(for='user_name') Username
+                        input#user_name.form-control(type="text" aria-describedby='emailHelp' placeholder='Enter your username here' name="user_name")
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter your password here' name="password")
+                        br
+                    button.btn.btn-primary Register
+                    br
+                    br
+                    br
+                    br
+                    br
+                    p Already A Member? 
+                        a(href="/") Login
