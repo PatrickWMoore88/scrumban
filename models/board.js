@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       background: DataTypes.STRING,
       owner_id: DataTypes.INTEGER,
-      member_ids: DataTypes.ARRAY(DataTypes.INTEGER)
+      member_ids: DataTypes.ARRAY(DataTypes.INTEGER),
+      defaultValue: []
     },
     {}
   );

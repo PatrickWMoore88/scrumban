@@ -2,16 +2,9 @@ const express = require("express");
 const router = express.Router();
 const models = require("../models");
 
-// function loginRedirect(req, res, next) {
-//   if (!req.session.user_id) {
-//     res.redirect("/login");
-//   } else {
-//     next();
-//   }
-// }
-
 function authenticate(req, res, next) {
-  if (!req.session.user_id) {
+  console.log(req.session);
+  if (!req.session) {
     res.redirect("/login");
   } else {
     next();
@@ -19,10 +12,11 @@ function authenticate(req, res, next) {
 }
 
 router.get("/", authenticate, (req, res) => {
-  res.render("account");
+  console.log(req.user[0].dataValues);
+  res.render("account", { username: req.user[0].dataValues });
 });
 
-router.get("/dashboard", authenticate, (req, res) => {
+router.get("/dashboard", (req, res) => {
   res.render("account/dashboard");
 });
 
@@ -143,17 +137,5 @@ router.post("/to-watch/delete", authenticate, async (req, res) => {
     res.send(e);
   }
 });
-
-// router.get("/logout", authenticate, (req, res) => {
-//   req.session.destroy(function() {
-//     req.logout();
-// delete req.session;
-// if (!req.session) {
-//   res.send("User has Logged Out");
-// res.redirect("/login");
-// } else {
-//   res.send("User Session Is Still Live!");
-// }
-// });
 
 module.exports = router;
