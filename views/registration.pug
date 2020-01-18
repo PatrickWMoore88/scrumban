@@ -5,19 +5,23 @@ block content
         .row
             .col
                 h1 Scrumban - Registration 
+                br
+                br
                 form(method="POST" action="/register")
                     .form-group
                         label(for='user_name') Username
                         input#user_name.form-control(type="text" aria-describedby='emailHelp' placeholder='Enter your username here' name="user_name")
                     .form-group
+                        label(for='display_name') Displayname
+                        input#user_name.form-control(type="text" aria-describedby='emailHelp' placeholder='Enter a display name here' name="display_name")
+                    .form-group
                         label(for='password') Password
-                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter your password here' name="password")
+                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Confirm your password here' name="password")
+                    .form-group
+                        label(for='confirm_password') Password Conformation
+                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter your password here' name="confirm_password")
                         br
                     button.btn.btn-primary Register
-                    br
-                    p Sign Up with Github
-                        a(href="/auth/github")
-                            img(src="/images/github-logo.png" width='150' height='60' alt="github logo")
                     br
                     br
                     br

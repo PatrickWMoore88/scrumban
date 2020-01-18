@@ -5,28 +5,28 @@ block content
         .row
             .col
                 h1 Scrumban
-                if registeredSuccessfully
-                    .alert.alert-success
+                br
+                br
+                //- if registeredSuccessfully
+                //-     .alert.alert-success
                 form(method="POST" action="/login")
                     .form-group
-                        label(for='user_name') User Name
-                        input#name.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter User Name' name="user_name")
+                        label(for='username') User Name
+                        input#name.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter User Name' name="username")
                     .form-group
                         label(for='password') Password
                         input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter password' name="password")
                         br
                     button.btn.btn-primary Login
                     br
-                    p Login with Github
-                        a(href="/auth/github")
-                            img(src="/images/github-logo.png" width='150' height='60' alt="github logo")
-                    p Login with Google
-                        a(href="/auth/google")
-                            img(src="/images/google-plus-logo.png" width='50' height='50' alt="google logo")
+                    br
+                    //- p Login with Google
+                    a(href="/auth/google")
+                        img(src="/images/google-plus-logo.png" width='50' height='50' alt="google logo")
                     br
                     br
                     br
                     br
                     br
-                    p Need to Sign Up? 
+                    p Not A Member? 
                         a(href="/registration") Register

@@ -1,57 +1,7 @@
-.header {
-  background-color: rgb(0, 0, 0);
+.card-deck {
+  margin: 13px;
 }
 
-.header-title {
-  font-size: 20px;
-  margin: 0;
-}
-
-.content {
-  background-color: rgb(0, 0, 0);
-  min-height: 80vh;
-  padding: 20px 0;
-}
-
-body {
-  background-image: url("/images/apex-home-page.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: top;
-  /* background-attachment: fixed; */
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  color: white;
-  font-family: "Nosifer", cursive;
-  text-shadow: 4px 3px black;
-}
-
-li {
-  list-style-type: none;
-}
-
-a,
-a:hover,
-a:focus {
-  background-color: black;
-  color: yellow;
-  text-decoration: none;
-}
-
-#legendInfo {
-  background-color: black;
-  text-align: center;
-  padding-right: 15px;
-  margin-left: 400px;
-  margin-right: 415px;
-}
-
-#legends {
-  background-color: black;
-  text-align: center;
-  font-size: 30px;
-  margin-left: 300px;
-  margin-right: 315px;
-  padding-right: 15px;
+#lists {
+  margin-right: 15px;
 }

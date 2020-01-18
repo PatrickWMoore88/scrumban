@@ -9,16 +9,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       display_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      image_url: {
+      googleid: {
         type: Sequelize.TEXT
       },
       password: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+      },
+      confirm_password: {
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,

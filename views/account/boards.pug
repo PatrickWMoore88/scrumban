@@ -1,0 +1,35 @@
+extend account
+
+append base
+    br
+    br
+    div#lists
+        .list.text-center(style='width: 18rem;')
+            .list-body
+                h3.list-title Create List
+                .row
+                    .col-md-6.col-md-offset-3
+                        form(method="POST" action="./account/lists/add")
+                            .form-group
+                                label(for='list_name') Project Name
+                                input#name.form-control(type='text' placeholder='Enter Your List Name' name="list_name")
+                                br
+                            button.btn.btn-primary Start Your New Project
+        //- .card-deck
+    //-     .card.todo
+    //-         .card-body
+    //-             h5.card-title Todo
+    //-             p.card-text Tasks To Work On
+    //-         small.text-muted Last updated 3 mins ago
+    //-     .card.inprogress
+    //-         .card-body
+    //-             h5.card-title In-Progress
+    //-             p.card-text Tasks Being Worked On
+    //-         small.text-muted Last updated 3 mins ago
+    //-     .card.test
+    //-         .card-body
+    //-             h5.card-title Testing
+    //-             p.card-text Tasks To Be Tested
+    //-         small.text-muted Last updated 3 mins ago
+
+            

@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       display_name: DataTypes.STRING,
-      githubid: DataTypes.TEXT,
       googleid: DataTypes.TEXT,
-      password: DataTypes.TEXT
+      password: DataTypes.TEXT,
+      confirm_password: DataTypes.TEXT
     },
     {}
   );
-  user.associate = function(models) {
+  user.associate = function (models) {
     // associations can be defined here
   };
   return user;
